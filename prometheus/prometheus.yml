@@ -1,0 +1,20 @@
+global:
+  scrape_interval:     5s   # pull metrics every 5 s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # ── GraphQL application servers ───────────────────────────────
+  - job_name: "graphql-servers"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+          - "server-1:8000"
+          - "server-2:8000"
+          - "server-3:8000"
+          - "server-4:8000"
+    # Surface the hostname as a clean `instance` label
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: "([^:]+):.*"
+        target_label: instance
+        replacement: "$1"
