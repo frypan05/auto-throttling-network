@@ -38,6 +38,10 @@ a Grafana dashboard.
 
 ---
 
+<img width="1882" height="1079" alt="image" src="https://github.com/user-attachments/assets/a3b5166a-e915-4db5-95d4-d1c4d4580ffa" />
+
+<img width="1878" height="1077" alt="image" src="https://github.com/user-attachments/assets/0c71a183-926e-431a-850e-b8cf911379b2" />
+
 ## Quick Start
 
 ```bash
