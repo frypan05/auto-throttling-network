@@ -2,7 +2,7 @@
 
 A self-contained Docker project that demonstrates **Nginx least-connection load
 balancing** across four Python/GraphQL servers, with live Prometheus metrics and
-a pre-built Grafana dashboard.
+a Grafana dashboard.
 
 ---
 
