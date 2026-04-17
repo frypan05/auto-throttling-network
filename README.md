@@ -1,4 +1,4 @@
-# Nginx Load Balancer Demo — FastAPI · GraphQL · Prometheus · Grafana
+# Nginx Load Balancer — FastAPI · GraphQL · Prometheus · Grafana
 
 A self-contained Docker project that demonstrates **Nginx least-connection load
 balancing** across four Python/GraphQL servers, with live Prometheus metrics and
@@ -30,8 +30,8 @@ a pre-built Grafana dashboard.
 
 | Service        | Port | Description                                  |
 |----------------|------|----------------------------------------------|
-| `nginx`        | 80   | Load balancer — `least_conn` algorithm        |
-| `server-1..4`  | —    | FastAPI + Strawberry GraphQL + `/metrics`     |
+| `nginx`        | 80   | Load balancer — `least_conn` algorithm       |
+| `server-1..4`  | —    | FastAPI + Strawberry GraphQL + `/metrics`    |
 | `client`       | —    | Async traffic generator (no exposed port)    |
 | `prometheus`   | 9090 | Metrics scraper                              |
 | `grafana`      | 3000 | Dashboards — login `admin` / `admin`         |
@@ -180,7 +180,7 @@ docker compose down -v
 ## Project Structure
 
 ```
-nginx-lb-demo/
+auto-throttling-network/
 ├── docker-compose.yml
 ├── nginx/
 │   └── nginx.conf            # Least-conn upstream config
