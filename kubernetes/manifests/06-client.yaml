@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: graphql-client
+    namespace: graphql-lb
+    labels:
+        app: graphql-client
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: graphql-client
+    template:
+        metadata:
+            labels:
+                app: graphql-client
+        spec:
+            restartPolicy: Always
+            containers:
+                - name: graphql-client
+                  image: auto-throttling-network-client:latest
+                  imagePullPolicy: Never
+                  env:
+                      - name: NGINX_URL
+                        value: "http://nginx/graphql"
+                      - name: CONCURRENCY
+                        value: "4"
+                      - name: MIN_DELAY
+                        value: "0.3"
+                      - name: MAX_DELAY
+                        value: "1.5"
+                  resources:
+                      requests:
+                          cpu: 100m
+                          memory: 128Mi
+                      limits:
+                          cpu: 500m
+                          memory: 512Mi
